@@ -1,0 +1,18 @@
+{
+  "block.whoopee.whoopee_cushion": "Whoopee Cushion",
+  "itemGroup.whoopee.tab": "Whoopee",
+  "whoopee.configuration.fallTootChance": "Fall Toot Chance",
+  "whoopee.configuration.fallTootChance.tooltip": "The chance for a toot sound to play when falling on a Whoopee Cushion [Default: 1.0]",
+  "whoopee.configuration.fallingPlayerTootChance": "Falling Player Toot Chance",
+  "whoopee.configuration.fallingPlayerTootChance.tooltip": "The chance for a toot sound to play when the player falls while wearing a Whoopee Cushion on their head [Default: 0.4]",
+  "whoopee.configuration.general": "General",
+  "whoopee.configuration.general.tooltip": "General Settings",
+  "whoopee.configuration.inventoryTootChance": "Inventory Toot Chance",
+  "whoopee.configuration.inventoryTootChance.tooltip": "The chance for a toot sound to play when an inventory is opened containing a Whoopee Cushion [Default: 0.15]",
+  "whoopee.configuration.stepTootChance": "Step Toot Chance",
+  "whoopee.configuration.stepTootChance.tooltip": "The chance for a toot sound to play when walking on a Whoopee Cushion [Default: 0.05]",
+  "whoopee.configuration.title": "Whoopee Config",
+  "whoopee.cushion_tooltip": "Shift right-click to place on the ground, right-click to play a toot sound",
+  "whoopee.subtitle.whoopee": "Flatulence",
+  "whoopee.subtitle.whoopee.reverb": "Flatulence but with reverb"
+}

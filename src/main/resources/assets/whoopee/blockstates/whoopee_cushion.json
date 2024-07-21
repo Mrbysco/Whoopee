@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "whoopee:block/whoopee_cushion",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "whoopee:block/whoopee_cushion"
+    },
+    "facing=south": {
+      "model": "whoopee:block/whoopee_cushion",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "whoopee:block/whoopee_cushion",
+      "y": 270
+    }
+  }
+}

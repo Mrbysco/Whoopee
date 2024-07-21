@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+issueTrackerURL="https://github.com/Mrbysco/Whoopee/issues"
+license="MIT"
+
+[[mods]]
+modId="whoopee"
+version="${file.jarVersion}"
+displayName="Whoopee"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/Whoopee"
+authors="Mrbysco"
+description='''
+Haha, whoopee cushion go pffft!
+'''
+[[dependencies.whoopee]]
+modId="minecraft"
+type="REQUIRED"
+versionRange="[1.21,1.22)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.whoopee]]
+modId="neoforge"
+type="required"
+versionRange="[21.0.110-beta,)"
+ordering="NONE"
+side="BOTH"

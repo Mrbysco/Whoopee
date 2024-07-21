@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "tag": "c:leathers"
+    },
+    "R": {
+      "tag": "c:dyes/red"
+    }
+  },
+  "pattern": [
+    " L ",
+    "LRL",
+    " L "
+  ],
+  "result": {
+    "count": 1,
+    "id": "whoopee:whoopee_cushion"
+  }
+}

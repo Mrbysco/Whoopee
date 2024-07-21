@@ -1,0 +1,16 @@
+{
+  "whoopee": {
+    "sounds": [
+      "whoopee:whoopee",
+      "whoopee:whoopee2"
+    ],
+    "subtitle": "whoopee.subtitle.whoopee"
+  },
+  "whoopee.reverb": {
+    "sounds": [
+      "whoopee:whoopee-reverb",
+      "whoopee:whoopee2-reverb"
+    ],
+    "subtitle": "whoopee.subtitle.whoopee"
+  }
+}
