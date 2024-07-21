@@ -37,7 +37,7 @@ public class WhoopeeLootProvider extends LootTableProvider {
 
 		@Override
 		protected Iterable<Block> getKnownBlocks() {
-			return (Iterable<Block>) WhoopeeRegistry.BLOCKS.getEntries().stream().map(holder -> (Block) holder.value())::iterator;
+			return WhoopeeRegistry.BLOCKS.getEntries().stream().map(holder -> (Block) holder.value())::iterator;
 		}
 	}
 
