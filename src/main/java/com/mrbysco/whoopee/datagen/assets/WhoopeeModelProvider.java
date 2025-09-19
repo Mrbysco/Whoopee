@@ -16,8 +16,10 @@ public class WhoopeeModelProvider extends ModelProvider {
 	@Override
 	protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 		blockModels.blockStateOutput.accept(
-				BlockModelGenerators.createSimpleBlock(WhoopeeRegistry.WHOOPEE_BLOCK.get(), modLocation("block/whoopee_cushion"))
-						.with(BlockModelGenerators.createHorizontalFacingDispatch())
+				BlockModelGenerators.createSimpleBlock(WhoopeeRegistry.WHOOPEE_BLOCK.get(),
+								BlockModelGenerators.plainVariant(modLocation("block/whoopee_cushion"))
+						)
+						.with(BlockModelGenerators.ROTATION_HORIZONTAL_FACING)
 		);
 	}
 }

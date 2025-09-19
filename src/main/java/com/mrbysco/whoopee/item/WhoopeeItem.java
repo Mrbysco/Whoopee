@@ -14,12 +14,13 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
+import java.util.function.Consumer;
 
 public class WhoopeeItem extends BlockItem {
 	public WhoopeeItem(WhoopeeBlock block, Properties properties) {
@@ -64,8 +65,8 @@ public class WhoopeeItem extends BlockItem {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-		super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-		tooltipComponents.add(Component.translatable("whoopee.cushion_tooltip").withStyle(ChatFormatting.GRAY));
+	public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipAdder, TooltipFlag flag) {
+		super.appendHoverText(stack, context, tooltipDisplay, tooltipAdder, flag);
+		tooltipAdder.accept(Component.translatable("whoopee.cushion_tooltip").withStyle(ChatFormatting.GRAY));
 	}
 }

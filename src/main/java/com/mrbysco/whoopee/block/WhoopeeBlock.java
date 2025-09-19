@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -65,7 +66,7 @@ public class WhoopeeBlock extends HorizontalDirectionalBlock {
 	}
 
 	@Override
-	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, double fallDistance) {
 		super.fallOn(level, state, pos, entity, fallDistance);
 		if (FartUtil.canPlay(level.getRandom(), WhoopeeConfig.COMMON.fallTootChance.getAsDouble())) {
 			FartUtil.playFart(level, entity, true);
@@ -83,15 +84,14 @@ public class WhoopeeBlock extends HorizontalDirectionalBlock {
 	}
 
 	@Override
-	protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (!state.is(newState.getBlock())) {
-			if (state.getValue(HIDDEN)) {
-				ItemEntity itementity = new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), Items.LEATHER.getDefaultInstance());
-				itementity.setDeltaMovement(0.0D, 0.2D, 0.0D);
-				itementity.hurtMarked = true;
-				level.addFreshEntity(itementity);
-			}
+	public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
+		if (state.getValue(HIDDEN)) {
+			ItemEntity itementity = new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), Items.LEATHER.getDefaultInstance());
+			itementity.setDeltaMovement(0.0D, 0.2D, 0.0D);
+			itementity.hurtMarked = true;
+			level.addFreshEntity(itementity);
 		}
+		return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
 	}
 
 	@Override
