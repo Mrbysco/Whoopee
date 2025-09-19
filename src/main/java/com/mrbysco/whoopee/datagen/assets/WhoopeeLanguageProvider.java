@@ -50,7 +50,7 @@ public class WhoopeeLanguageProvider extends LanguageProvider {
 	 * @param text  The subtitle text
 	 */
 	public void addSubtitle(SoundEvent sound, String text) {
-		String path = WhoopeeMod.MOD_ID + ".subtitle." + sound.getLocation().getPath();
+		String path = WhoopeeMod.MOD_ID + ".subtitle." + sound.location().getPath();
 		this.add(path, text);
 	}
 

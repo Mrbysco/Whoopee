@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "L": {
-      "tag": "c:leathers"
-    },
-    "R": {
-      "tag": "c:dyes/red"
-    }
+    "L": "#c:leathers",
+    "R": "#c:dyes/red"
   },
   "pattern": [
     " L ",

@@ -4,13 +4,12 @@ import com.mrbysco.whoopee.WhoopeeMod;
 import com.mrbysco.whoopee.registry.WhoopeeRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.common.data.SoundDefinitionsProvider;
 
 public class WhoopeeSoundProvider extends SoundDefinitionsProvider {
 
-	public WhoopeeSoundProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
-		super(packOutput, WhoopeeMod.MOD_ID, existingFileHelper);
+	public WhoopeeSoundProvider(PackOutput packOutput) {
+		super(packOutput, WhoopeeMod.MOD_ID);
 	}
 
 	@Override
