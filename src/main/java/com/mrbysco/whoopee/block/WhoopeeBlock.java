@@ -84,14 +84,14 @@ public class WhoopeeBlock extends HorizontalDirectionalBlock {
 	}
 
 	@Override
-	public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
+	public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, ItemStack toolStack, boolean willHarvest, FluidState fluid) {
 		if (state.getValue(HIDDEN)) {
 			ItemEntity itementity = new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), Items.LEATHER.getDefaultInstance());
 			itementity.setDeltaMovement(0.0D, 0.2D, 0.0D);
 			itementity.hurtMarked = true;
 			level.addFreshEntity(itementity);
 		}
-		return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+		return super.onDestroyedByPlayer(state, level, pos, player, toolStack, willHarvest, fluid);
 	}
 
 	@Override

@@ -4,7 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.mrbysco.whoopee.config.WhoopeeConfig;
 import com.mrbysco.whoopee.handler.WhoopeeHandler;
 import com.mrbysco.whoopee.registry.WhoopeeRegistry;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -36,7 +36,7 @@ public class WhoopeeMod {
 		}
 	}
 
-	public static ResourceLocation modLoc(String path) {
-		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+	public static Identifier modLoc(String path) {
+		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 	}
 }

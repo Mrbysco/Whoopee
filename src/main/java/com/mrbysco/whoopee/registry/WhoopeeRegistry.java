@@ -27,8 +27,8 @@ public class WhoopeeRegistry {
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, WhoopeeMod.MOD_ID);
 	public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(Registries.SOUND_EVENT, WhoopeeMod.MOD_ID);
 
-	public static final DeferredBlock<WhoopeeBlock> WHOOPEE_BLOCK = BLOCKS.registerBlock("whoopee_cushion", WhoopeeBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED).strength(0.1F).sound(SoundType.WOOL));
-	public static final DeferredItem<BlockItem> WHOOPEE_BLOCK_ITEM = ITEMS.registerItem("whoopee_cushion", (properties) -> new WhoopeeItem(WHOOPEE_BLOCK.get(), properties.useBlockDescriptionPrefix()));
+	public static final DeferredBlock<WhoopeeBlock> WHOOPEE_BLOCK = BLOCKS.registerBlock("whoopee_cushion", WhoopeeBlock::new, () ->BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED).strength(0.1F).sound(SoundType.WOOL));
+	public static final DeferredItem<WhoopeeItem> WHOOPEE_BLOCK_ITEM = ITEMS.registerItem("whoopee_cushion", (properties) -> new WhoopeeItem(WHOOPEE_BLOCK.get(), properties.useBlockDescriptionPrefix()));
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> WHOOPEE = registerSound("whoopee");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WHOOPEE_REVERB = registerSound("whoopee.reverb");
