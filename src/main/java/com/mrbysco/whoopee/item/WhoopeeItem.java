@@ -64,6 +64,7 @@ public class WhoopeeItem extends BlockItem {
 		return flag && super.canPlace(context, state);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipAdder, TooltipFlag flag) {
 		tooltipAdder.accept(Component.translatable("whoopee.cushion_tooltip").withStyle(ChatFormatting.GRAY));
