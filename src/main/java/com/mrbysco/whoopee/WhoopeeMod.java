@@ -28,6 +28,7 @@ public class WhoopeeMod {
 		WhoopeeRegistry.ITEMS.register(eventBus);
 		WhoopeeRegistry.CREATIVE_MODE_TABS.register(eventBus);
 		WhoopeeRegistry.SOUND_EVENTS.register(eventBus);
+		WhoopeeRegistry.ATTACHMENT_TYPES.register(eventBus);
 
 		NeoForge.EVENT_BUS.register(new WhoopeeHandler());
 

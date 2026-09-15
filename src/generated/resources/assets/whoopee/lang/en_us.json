@@ -9,6 +9,8 @@
   "whoopee.configuration.general.tooltip": "General Settings",
   "whoopee.configuration.inventoryTootChance": "Inventory Toot Chance",
   "whoopee.configuration.inventoryTootChance.tooltip": "The chance for a toot sound to play when an inventory is opened containing a Whoopee Cushion [Default: 0.15]",
+  "whoopee.configuration.sittingTootChance": "Sitting Toot Chance",
+  "whoopee.configuration.sittingTootChance.tooltip": "The chance for a toot sound to play when sitting on a whoopeed cushion [Default: 0.4]",
   "whoopee.configuration.stepTootChance": "Step Toot Chance",
   "whoopee.configuration.stepTootChance.tooltip": "The chance for a toot sound to play when walking on a Whoopee Cushion [Default: 0.05]",
   "whoopee.configuration.title": "Whoopee Config",

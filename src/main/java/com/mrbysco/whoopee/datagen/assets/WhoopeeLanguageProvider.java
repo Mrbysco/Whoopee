@@ -30,6 +30,7 @@ public class WhoopeeLanguageProvider extends LanguageProvider {
 		addConfig("stepTootChance", "Step Toot Chance", "The chance for a toot sound to play when walking on a Whoopee Cushion [Default: 0.05]");
 		addConfig("fallTootChance", "Fall Toot Chance", "The chance for a toot sound to play when falling on a Whoopee Cushion [Default: 1.0]");
 		addConfig("fallingPlayerTootChance", "Falling Player Toot Chance", "The chance for a toot sound to play when the player falls while wearing a Whoopee Cushion on their head [Default: 0.4]");
+		addConfig("sittingTootChance", "Sitting Toot Chance", "The chance for a toot sound to play when sitting on a whoopeed cushion [Default: 0.4]");
 		addConfig("inventoryTootChance", "Inventory Toot Chance", "The chance for a toot sound to play when an inventory is opened containing a Whoopee Cushion [Default: 0.15]");
 	}
 

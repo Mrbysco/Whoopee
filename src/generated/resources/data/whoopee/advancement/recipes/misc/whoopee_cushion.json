@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "whoopee:whoopee_cushion"
+        "recipes": "whoopee:whoopee_cushion"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

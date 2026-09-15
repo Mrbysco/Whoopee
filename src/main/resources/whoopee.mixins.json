@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "compatibilityLevel": "JAVA_25",
+  "package": "com.mrbysco.whoopee.mixin",
+  "target": "@env(DEFAULT)",
+  "mixins": [
+    "CushionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

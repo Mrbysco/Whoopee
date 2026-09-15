@@ -15,12 +15,14 @@ Haha, whoopee cushion go pffft!
 [[dependencies.whoopee]]
 modId="minecraft"
 type="REQUIRED"
-versionRange="[26.2,)"
+versionRange="[26.3,)"
 ordering="NONE"
 side="BOTH"
 [[dependencies.whoopee]]
 modId="neoforge"
 type="required"
-versionRange="[26.2.0.57,)"
+versionRange="[26.3.0.0-beta,)"
 ordering="NONE"
 side="BOTH"
+[[mixins]]
+config="whoopee.mixins.json"

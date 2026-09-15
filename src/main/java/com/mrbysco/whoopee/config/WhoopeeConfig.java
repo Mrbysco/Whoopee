@@ -11,6 +11,7 @@ public class WhoopeeConfig {
 		public final ModConfigSpec.DoubleValue stepTootChance;
 		public final ModConfigSpec.DoubleValue fallTootChance;
 		public final ModConfigSpec.DoubleValue fallingPlayerTootChance;
+		public final ModConfigSpec.DoubleValue sittingTootChance;
 		public final ModConfigSpec.DoubleValue inventoryTootChance;
 
 		Common(ModConfigSpec.Builder builder) {
@@ -28,6 +29,10 @@ public class WhoopeeConfig {
 			fallingPlayerTootChance = builder
 					.comment("The chance for a toot sound to play when the player falls while wearing a Whoopee Cushion on their head [Default: 0.4]")
 					.defineInRange("fallingPlayerTootChance", 0.4, 0.001, 1);
+
+			sittingTootChance = builder
+					.comment("The chance for a toot sound to play when sitting on a whoopeed cushion [Default: 0.4]")
+					.defineInRange("sittingTootChance", 0.4, 0.001, 1);
 
 			inventoryTootChance = builder
 					.comment("The chance for a toot sound to play when an inventory is opened containing a Whoopee Cushion [Default: 0.15]")

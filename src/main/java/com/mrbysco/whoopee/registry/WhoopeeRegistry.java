@@ -1,5 +1,6 @@
 package com.mrbysco.whoopee.registry;
 
+import com.mojang.serialization.Codec;
 import com.mrbysco.whoopee.WhoopeeMod;
 import com.mrbysco.whoopee.block.WhoopeeBlock;
 import com.mrbysco.whoopee.item.WhoopeeItem;
@@ -13,10 +14,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -26,12 +29,17 @@ public class WhoopeeRegistry {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(WhoopeeMod.MOD_ID);
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, WhoopeeMod.MOD_ID);
 	public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(Registries.SOUND_EVENT, WhoopeeMod.MOD_ID);
+	public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.ATTACHMENT_TYPES, WhoopeeMod.MOD_ID);
 
 	public static final DeferredBlock<WhoopeeBlock> WHOOPEE_BLOCK = BLOCKS.registerBlock("whoopee_cushion", WhoopeeBlock::new, () ->BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED).strength(0.1F).sound(SoundType.WOOL));
 	public static final DeferredItem<WhoopeeItem> WHOOPEE_BLOCK_ITEM = ITEMS.registerItem("whoopee_cushion", (properties) -> new WhoopeeItem(WHOOPEE_BLOCK.get(), properties.useBlockDescriptionPrefix()));
 
 	public static final DeferredHolder<SoundEvent, SoundEvent> WHOOPEE = registerSound("whoopee");
 	public static final DeferredHolder<SoundEvent, SoundEvent> WHOOPEE_REVERB = registerSound("whoopee.reverb");
+
+	public static final Supplier<AttachmentType<Boolean>> WHOOPEED = ATTACHMENT_TYPES.register(
+			"whoopeed", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL.fieldOf("whoopeed")).build()
+	);
 
 	private static DeferredHolder<SoundEvent, SoundEvent> registerSound(String soundID) {
 		return SOUND_EVENTS.register(soundID, () -> SoundEvent.createVariableRangeEvent(WhoopeeMod.modLoc(soundID)));

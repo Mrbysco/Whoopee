@@ -1,6 +1,5 @@
 package com.mrbysco.whoopee.block;
 
-import com.mojang.serialization.MapCodec;
 import com.mrbysco.whoopee.config.WhoopeeConfig;
 import com.mrbysco.whoopee.util.FartUtil;
 import net.minecraft.core.BlockPos;
@@ -28,14 +27,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class WhoopeeBlock extends HorizontalDirectionalBlock {
-
-	public static final MapCodec<WhoopeeBlock> CODEC = simpleCodec(WhoopeeBlock::new);
 	private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 4, 15);
-
-	@Override
-	protected MapCodec<WhoopeeBlock> codec() {
-		return CODEC;
-	}
 
 	public static final BooleanProperty HIDDEN = BooleanProperty.create("hidden");
 
@@ -59,7 +51,7 @@ public class WhoopeeBlock extends HorizontalDirectionalBlock {
 			level.setBlock(pos, state.setValue(HIDDEN, false), 3);
 			ItemEntity itementity = new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), Items.LEATHER.getDefaultInstance());
 			itementity.setDeltaMovement(0.0D, 0.2D, 0.0D);
-			itementity.hurtMarked = true;
+			itementity.needsSync = true;
 			level.addFreshEntity(itementity);
 		}
 		return super.useWithoutItem(state, level, pos, player, hitResult);
@@ -88,7 +80,7 @@ public class WhoopeeBlock extends HorizontalDirectionalBlock {
 		if (state.getValue(HIDDEN)) {
 			ItemEntity itementity = new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), Items.LEATHER.getDefaultInstance());
 			itementity.setDeltaMovement(0.0D, 0.2D, 0.0D);
-			itementity.hurtMarked = true;
+			itementity.needsSync = true;
 			level.addFreshEntity(itementity);
 		}
 		return super.onDestroyedByPlayer(state, level, pos, player, toolStack, willHarvest, fluid);
