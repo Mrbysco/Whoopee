@@ -95,13 +95,25 @@ repositories {
     maven {
         url = "https://maven.blamejared.com"
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                url "https://cursemaven.com"
+            }
+        }
+        filter {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
-//    compileOnly "mezz.jei:jei-${jei_minecraft}-common-api:${jei_version}"
-//    compileOnly "mezz.jei:jei-${jei_minecraft}-neoforge-api:${jei_version}"
-//
-//    localRuntime "mezz.jei:jei-${jei_minecraft}-neoforge:${jei_version}"
+    compileOnly "mezz.jei:jei-${jei_minecraft}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${jei_minecraft}-neoforge-api:${jei_version}"
+
+    localRuntime "mezz.jei:jei-${jei_minecraft}-neoforge:${jei_version}"
+
+    implementation "curse.maven:leashable-cushions-1640115:8889647"
 }
 
 jar {
