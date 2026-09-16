@@ -51,7 +51,7 @@ public class WhoopeeBlock extends HorizontalDirectionalBlock {
 			level.setBlock(pos, state.setValue(HIDDEN, false), 3);
 			ItemEntity itementity = new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), Items.LEATHER.getDefaultInstance());
 			itementity.setDeltaMovement(0.0D, 0.2D, 0.0D);
-			itementity.needsSync = true;
+			itementity.syncVelocity = true;
 			level.addFreshEntity(itementity);
 		}
 		return super.useWithoutItem(state, level, pos, player, hitResult);
@@ -80,7 +80,7 @@ public class WhoopeeBlock extends HorizontalDirectionalBlock {
 		if (state.getValue(HIDDEN)) {
 			ItemEntity itementity = new ItemEntity(level, pos.getX(), pos.getY() + 0.5, pos.getZ(), Items.LEATHER.getDefaultInstance());
 			itementity.setDeltaMovement(0.0D, 0.2D, 0.0D);
-			itementity.needsSync = true;
+			itementity.syncVelocity = true;
 			level.addFreshEntity(itementity);
 		}
 		return super.onDestroyedByPlayer(state, level, pos, player, toolStack, willHarvest, fluid);
