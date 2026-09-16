@@ -19,9 +19,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Cushion.class)
 public abstract class CushionMixin extends BlockAttachedEntity {
 
-	@Shadow
-	protected abstract ItemStack getCushionItemStackWithData();
-
 	protected CushionMixin(EntityType<? extends BlockAttachedEntity> type, Level level) {
 		super(type, level);
 	}
