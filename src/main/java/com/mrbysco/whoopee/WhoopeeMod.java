@@ -21,7 +21,7 @@ public class WhoopeeMod {
 	public static final Logger LOGGER = LogUtils.getLogger();
 
 	public WhoopeeMod(IEventBus eventBus, Dist dist, ModContainer container) {
-		container.registerConfig(ModConfig.Type.COMMON, WhoopeeConfig.commonSpec);
+		container.registerConfig(ModConfig.Type.LOCAL, WhoopeeConfig.commonSpec);
 		eventBus.register(WhoopeeConfig.class);
 
 		WhoopeeRegistry.BLOCKS.register(eventBus);
