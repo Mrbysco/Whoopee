@@ -20,20 +20,6 @@ public class WhoopeeRecipeProvider extends RecipeProvider {
 		super(recipeOutput, advancementOutput);
 	}
 
-	public static MultiRegistryBootstrap create() {
-		return new MultiRegistryBootstrap() {
-			@Override
-			public Set<ResourceKey<? extends Registry<?>>> requestedRegistries() {
-				return Set.of(Registries.RECIPE, Registries.ADVANCEMENT);
-			}
-
-			@Override
-			public void run(MultiRegistryBootstrap.BootstrapGetter registries) {
-				new WhoopeeRecipeProvider(registries.get(Registries.RECIPE), registries.get(Registries.ADVANCEMENT)).buildRecipes();
-			}
-		};
-	}
-
 	@Override
 	protected void buildRecipes() {
 		shaped(RecipeCategory.MISC, WhoopeeRegistry.WHOOPEE_BLOCK.get())
